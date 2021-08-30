@@ -55,7 +55,7 @@ func main() {
 	fmt.Println("ToB,msg_seq_num,md_seq_num,ts_transact,bid_price,ask_price,bid_volume,ask_volume")
 	seq := 0
 	f := func(x *binance.WsBookTickerEvent) {
-		timestamp := time.Now().UnixNano() / 1000000
+		timestamp := time.Now().UnixNano()
 		fmt.Printf(
 			"ToB,%d,%d,%d,%s,%s,%s,%s\n",
 			x.UpdateID,
