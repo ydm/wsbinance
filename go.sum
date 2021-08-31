@@ -23,3 +23,5 @@ github.com/stretchr/testify v1.2.1 h1:52QO5WkIUcHGIR7EnGagH88x1bUzqGXTC5/1bDTUQ7
 github.com/stretchr/testify v1.2.1/go.mod h1:a8OnRcib4nhh0OaRAV+Yts87kKdq0PP7pXfy6kDkUVs=
 github.com/ydm/commons v0.0.0-20210821133843-f2de3a3093fa h1:Yh6ksC4zZQ5A8Z8VE/c/az4j3mSn6L9GzPkPcAc8i84=
 github.com/ydm/commons v0.0.0-20210821133843-f2de3a3093fa/go.mod h1:4O7VhiN1O0bT8/xa2ARAxn/LkYZj7CotMtQ+75WcFTs=
+gopkg.in/natefinch/lumberjack.v2 v2.0.0 h1:1Lc07Kr7qY4U2YPouBjpCLxpiyxIVoxqXgkXLknAOE8=
+gopkg.in/natefinch/lumberjack.v2 v2.0.0/go.mod h1:l0ndWWf7gzL7RNwBG7wST/UCcT4T24xpD6X8LsfU/+k=
