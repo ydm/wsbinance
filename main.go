@@ -24,8 +24,13 @@ func main() {
 	events := make(chan *binance.WsBookTickerEvent, 128)
 	defer close(events)
 
+	output := os.Getenv("OUTPUT")
+	if output == "" {
+		output = "/tmp"
+	}
+
 	writer := Writer{
-		File:     os.Stdout,
+		File:     makeWriter(output),
 		Input:    events,
 		Sequence: 0,
 	}
