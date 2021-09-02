@@ -5,12 +5,12 @@ import (
 	"io"
 	"time"
 
-	"github.com/adshao/go-binance/v2"
+	"github.com/adshao/go-binance/v2/futures"
 )
 
 type Writer struct {
 	File     io.Writer
-	Input    chan *binance.WsBookTickerEvent
+	Input    chan *futures.WsBookTickerEvent
 	Sequence int
 }
 
@@ -18,7 +18,7 @@ func (w *Writer) Header() {
 	fmt.Fprintln(w.File, "ToB,msg_seq_num,md_seq_num,ts_transact,bid_price,ask_price,bid_volume,ask_volume")
 }
 
-func (w *Writer) Row(x *binance.WsBookTickerEvent) {
+func (w *Writer) Row(x *futures.WsBookTickerEvent) {
 	timestamp := time.Now().UnixNano()
 	fmt.Fprintf(
 		w.File,

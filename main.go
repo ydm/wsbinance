@@ -4,7 +4,7 @@ import (
 	"context"
 	"os"
 
-	"github.com/adshao/go-binance/v2"
+	"github.com/adshao/go-binance/v2/futures"
 	"github.com/joho/godotenv"
 )
 
@@ -21,7 +21,7 @@ func main() {
 		symbol = "BTCUSDT"
 	}
 
-	events := make(chan *binance.WsBookTickerEvent, 128)
+	events := make(chan *futures.WsBookTickerEvent, 128)
 	defer close(events)
 
 	output := os.Getenv("OUTPUT")
@@ -36,9 +36,9 @@ func main() {
 	}
 	go writer.Loop()
 
-	done, stop, err := binance.WsBookTickerServe(
+	done, stop, err := futures.WsBookTickerServe(
 		symbol,
-		func(x *binance.WsBookTickerEvent) {
+		func(x *futures.WsBookTickerEvent) {
 			events <- x
 		},
 		func(err error) { panic(err) },
